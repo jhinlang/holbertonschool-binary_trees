@@ -19,7 +19,7 @@ void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
     /* 2. Traverse the left subtree (if it exists) */
     if (tree->left != NULL)
     {
-        return( tree->left, func );
+        binary_tree_inorder( tree->left, func );
     }
 
     /* 3. Visit the current node: call func with the node value */
@@ -28,7 +28,6 @@ void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
     /* 4. Traverse the right subtree (if it exists) */
     if (tree->right != NULL)
     {
-        return(tree->right, func);
+        binary_tree_inorder(tree->right, func);
     }
 }
-
